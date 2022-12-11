@@ -44,11 +44,7 @@ chown -R "${USER}:${USER}" plexamp
 if ! [ -d ~/.local/share/Plexamp ]; then
     echo "authentication needed, follow the instructions below"
     cd plexamp
-    read -p "Please visit https://plex.tv/claim and enter the claim token:" PLEX_TOKEN
-    read -p "Please give the player a name (e.g. Bedroom, Kitchen):" PLAYER_NAME
-    node js/index.js
-    echo $PLEX_TOKEN
-    echo $PLAYER_NAME
+    node js/index.js;
     cd
 fi
 
