@@ -12,11 +12,6 @@ if ! [ -x "$(command -v jq)" ]; then
     sudo apt install jq -y
 fi
 
-if ! [ -x "$(command -v curl)" ]; then
-    echo "curl not installed"
-    echo "installing curl"
-    sudo apt install curl -y
-fi
 
 if ! [ -x "$(command -v nvm)" ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
