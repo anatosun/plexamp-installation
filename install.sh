@@ -44,20 +44,23 @@ if ! [ -d ~/.local/share/Plexamp ]; then
     cd
 fi
 
-sudo echo "[Unit]
-Description=Plexamp
-After=network-online.target
-Requires=network-online.target
+SERVICE_CONFIG="[Unit]\n
+Description=Plexamp\n
+After=network-online.target\n
+Requires=network-online.target\n
+\n
+[Service]\n
+Type=simple\n
+User=pi\n
+WorkingDirectory=/home/pi/plexamp\n
+ExecStart=$(which node) /home/pi/plexamp/js/index.js\n
+Restart=on-failure\n
+\n
+[Install]\n
+WantedBy=multi-user.target" 
 
-[Service]
-Type=simple
-User=pi
-WorkingDirectory=/home/pi/plexamp
-ExecStart=$(which node) /home/pi/plexamp/js/index.js
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target" > /lib/systemd/system/plexamp.service
+echo -e $SERVICE_CONFIG > plexamp.service
+sudo mv plexamp.service /lib/systemd/system/plexamp.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable plexamp
