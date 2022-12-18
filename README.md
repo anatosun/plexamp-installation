@@ -1,6 +1,6 @@
 # Plexamp installation 
 
-This set of instructions is supposed to help you installation Plexamp on a totally headless system. The steps below and the script have been tested on Raspberry Pi Zero 2W without any issue. Feel free to submit pull requests if you feel anything is unclear or missing.
+This set of instructions is supposed to help you install Plexamp on a totally headless system. The steps below and the script have been tested on Raspberry Pi Zero 2W without any issue. Feel free to submit pull requests if you notice anything is unclear or missing.
 
 
 ## Flashing SD Card
